@@ -16,4 +16,4 @@ window.DRAW_OPTS =
   randomFill: ->
     h = Math.floor Math.random() * 360
     "hsl(" + h + ", 85%, 68%)"
-  animation: true
+  animation: false
