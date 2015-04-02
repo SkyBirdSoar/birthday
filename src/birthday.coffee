@@ -19,7 +19,7 @@ $(document).ready ->
     background: "#000"
 
   $('title').html('Happy Birthday, ' + urlParams.name + '!')
-  DRAW_OPTS.letters = urlParams.name.split("")
+  DRAW_OPTS.letters = urlParams.name.split("") if urlParams.name
   
   #$("#container").css "height", $(window).height()
   #$("#container").css "width", $(window).width()
