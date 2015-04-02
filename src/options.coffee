@@ -7,7 +7,7 @@ window.DRAW_OPTS =
     x1: 55
     x4: 110
     x9: 165
-  letters: ["K", "m", "a", "n", "1"]
+  letters: [""]
   font: "monospace"
   chance:
     letter: 0.3

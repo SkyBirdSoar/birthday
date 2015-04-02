@@ -1,8 +1,25 @@
+urlParams = null
+# http://stackoverflow.com/a/2880929
+(window.onpopstate = ->
+    match = null
+    pl     = /\+/g  # Regex for replacing addition symbol with a space
+    search = /([^&=]+)=?([^&]*)/g
+    decode = (s) -> decodeURIComponent(s.replace(pl, " ")) 
+    query  = window.location.search.substring(1)
+
+    urlParams = {}
+    while (match = search.exec(query))
+       urlParams[decode(match[1])] = decode(match[2])
+)();
+
 $(document).ready ->
   
   DRAW_OPTS.canvas = oCanvas.create
     canvas: "#main"
     background: "#000"
+
+  $('title').html('Happy Birthday, ' + urlParams.name + '!')
+  DRAW_OPTS.letters = urlParams.name.split("")
   
   #$("#container").css "height", $(window).height()
   #$("#container").css "width", $(window).width()
